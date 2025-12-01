@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+
+  <div class="spotlights" aria-hidden="true">
+    <div class="spot"></div>
+    <div class="spot"></div>
+    <div class="spot"></div>
+    <div class="spot"></div>
+    <div class="spot"></div>
+    <div class="spot"></div>
+    <div class="spot"></div>
+  </div>
+  
+  <div class="juego-bg-superior">
+    <div class="juego-bg-inferior">
+      <div class="juego-bg-monedas">
+
+        <div class="juego-superior"> 
+          <div class="logo-img">
+            <img src="img/logo.webp" class=""> 
+          </div> 
+        </div> 
+
+        <div class="juego-centro"> 
+          <div class="container0"></div>
+          <div class="tp-continer">
+            <div class="slot-machine-top">
+              <div class="bulb-container top-bulb">
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+              </div>
+              <div class="bulb-container bottom-bulb">
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prev-container">
+            <div class="slot-machine-top">
+              <div class="slot-container" role="application" aria-label="Slot machine">
+                <div class="reels">
+                  <div class="reel window">
+                    <div class="symbols" id="r1"></div>
+                  </div>
+                  <div class="reel window">
+                    <div class="symbols" id="r2"></div>
+                  </div>
+                  <div class="reel window">
+                    <div class="symbols" id="r3"></div>
+                  </div>
+                </div>
+                <!-- Palanca lateral -->
+                <div id="lever">
+                  <div id="lever-glow"></div>
+                  <div id="lever-top" aria-hidden="true"></div>
+                  <div id="lever-stick" aria-hidden="true"></div>
+                </div>
+              </div>
+              <div class="bulb-container left-bulb">
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+              </div>
+              <div class="bulb-container right-bulb">
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div>
+                <div class="bulb">⬤</div> 
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="juego-inferior">
+          <div class="controls">
+            <button class="cta" id="spinBtn">¡Participa!</button>
+          </div>
+          <div id="result">Pulsa para jugar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Audio -->
+  <audio id="bg-music" loop src=""></audio>
+  <audio id="spin-sfx" src="audio/juego_girrar.ogg"></audio>
+  <audio id="tick-sfx" src="audio/wood_plank_flicks.ogg"></audio>
+  <audio id="win-sfx" src="audio/juego_ganar.ogg"></audio>
+  <audio id="lose-sfx" src="audio/juego_perder.ogg"></audio>
+
+  <!-- Confetti library -->
+  <script src="js/confetti.browser.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html> 
