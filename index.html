@@ -3,10 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Agrega estas líneas: -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <title>Juego Ruleta</title>
-  <link rel="stylesheet" href="css/style.css"> 
-  <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css"> 
 </head>
 <body>
 
@@ -27,7 +32,7 @@
 
         <div class="juego-superior"> 
           <div class="logo-img">
-            <img src="img/logo.webp" class=""> 
+            <img src="./img/logo.webp" class=""> 
           </div> 
         </div> 
 
@@ -131,13 +136,39 @@
 
   <!-- Audio -->
   <audio id="bg-music" loop src=""></audio>
-  <audio id="spin-sfx" src="audio/juego_girrar.ogg"></audio>
-  <audio id="tick-sfx" src="audio/wood_plank_flicks.ogg"></audio>
-  <audio id="win-sfx" src="audio/juego_ganar.ogg"></audio>
-  <audio id="lose-sfx" src="audio/juego_perder.ogg"></audio>
+  <audio id="spin-sfx" src="./audio/juego_girrar.ogg"></audio>
+  <audio id="tick-sfx" src="./audio/wood_plank_flicks.ogg"></audio>
+  <audio id="win-sfx" src="./audio/juego_ganar.ogg"></audio>
+  <audio id="lose-sfx" src="./audio/juego_perder.ogg"></audio>
+
+  <script>
+      // Registrar Service Worker
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+              navigator.serviceWorker.register('./sw.js')
+                  .then(function(registration) {
+                      console.log('Service Worker registrado con éxito:', registration.scope);
+                  })
+                  .catch(function(error) {
+                      console.log('Error al registrar Service Worker:', error);
+                  });
+          });
+      }
+      
+      // Detectar si está offline
+      window.addEventListener('offline', function() {
+          console.log('Estás offline - El juego funciona localmente');
+      });
+      
+      // Verificar conexión al cargar
+      if (!navigator.onLine) {
+          console.log('Cargando en modo offline');
+      }
+  </script>
 
   <!-- Confetti library -->
-  <script src="js/confetti.browser.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="./js/confetti.browser.min.js"></script>
+  <script src="./js/script.js"></script>
+
 </body>
 </html> 
