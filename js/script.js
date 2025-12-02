@@ -251,3 +251,53 @@
   });
 
 })();
+
+/* Generador de monedas aleatorias */
+(function(){
+  function createRandomCoins(count = 10){
+    const container = document.querySelector('.coins');
+    if(!container) return;
+    container.innerHTML = '';
+
+    for(let i=0;i<count;i++){
+      const coin = document.createElement('div');
+      coin.className = 'coin';
+
+      const left = Math.random() * 100;
+      const topStart = -(Math.random() * 30 + 5);
+
+      // Duración y retraso aleatorios para evitar sincronía
+      const duration = (Math.random() * 4 + 4).toFixed(2); 
+      const delay = (Math.random() * 3).toFixed(2); 
+
+      const scale = (Math.random() * 0.6 + 0.7).toFixed(2); 
+      const rot = Math.floor(Math.random() * 360);
+
+      // Opacidad y z-index aleatorios (para sensación de profundidad)
+      const opacity = (Math.random() * 0.25 + 0.75).toFixed(2); 
+      const z = Math.floor(Math.random() * 5); 
+
+      coin.style.left = `${left}%`;
+      coin.style.top = `${topStart}%`;
+      coin.style.width = '';
+      coin.style.height = '';
+      coin.style.transform = `scale(${scale}) rotate(${rot}deg)`;
+      coin.style.opacity = opacity;
+      coin.style.zIndex = String(z);
+      coin.style.animationDuration = `${duration}s`;
+      coin.style.animationDelay = `${delay}s`;
+
+      container.appendChild(coin);
+    }
+  }
+
+  // Crea las monedas al cargar el script
+  createRandomCoins(16);
+
+  let resizeTimeout;
+  window.addEventListener('resize', ()=>{
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(()=> createRandomCoins(10), 600);
+  });
+
+})();

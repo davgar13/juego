@@ -248,6 +248,36 @@ body {
   text-shadow: calc(-0.2 * var(--length)) calc(-0.2 * var(--length)) calc(1 * var(--length)) #fff, calc(0.2 * var(--length)) calc(0.2 * var(--length)) calc(1 * var(--length)) #fff, 0 0 calc(0.5 * var(--length)) #fbbb32, 0 0 calc(1 * var(--length)) #fbbb32, 0 0 calc(1.5 * var(--length)) #fbbb32, 0 0 calc(2 * var(--length)) #fbbb32, 0 0 calc(2.5 * var(--length)) #fbbb32;
 }
 
+/* Monedas animadas decorativas */
+  .coins {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .coin {
+    width: 90px;
+    height: 90px; 
+    border-radius: 50%;
+    background-image: url("../img/moneda3.webp"); 
+    background-size: cover, auto; 
+    position: absolute;
+    left: 12%;
+    top: -8%;
+    transform-origin: center;
+    animation: fall linear infinite; 
+    filter: drop-shadow(0 6px 6px rgba(0,0,0,0.25));
+    opacity: .95;
+  }
+  .coin.c2 { left: 80%; top:-6%; animation-duration: 6s; animation-delay: .6s; }
+  .coin.c3 { left: 36%; top:-4%; animation-duration: 5.2s; animation-delay: .9s; }
+  .coin.c4 { left: 6%; top:4%; animation-duration: 7s; animation-delay: .2s; transform: scale(.9); }
+  @keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg) scale(1); opacity: .95; }
+    90% { opacity: .95; }
+    100% { transform: translateY(110vh) rotate(720deg) scale(.8); opacity: 0; }
+  }
 
 
 /* Iluminación vertical inferior */
