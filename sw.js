@@ -22,7 +22,6 @@ const urlsToCache = [
   './img/fondo_inferior.webp',
   './img/fondo_superior.webp',
   './img/moneda3.webp',
-  './img/monedas.webp',
   
   // Audio
   './audio/juego_ganar.ogg',
